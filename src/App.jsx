@@ -7,11 +7,17 @@ import Greeting from './Greeting'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  let cnt = 0
+  function countup() {
+    setCount(count + 1)
+    console.log("押された", count)
+  }
   return (
     <>
       <h1>見出しを書く</h1>
-      <Greeting name="サイバー" greet="こんにちは"/>
+      <Greeting name="サイバー" onclick={countup} greet="こんにちは"/>
+      {count}
+      <button>おして</button>
     </>
   )
 }
